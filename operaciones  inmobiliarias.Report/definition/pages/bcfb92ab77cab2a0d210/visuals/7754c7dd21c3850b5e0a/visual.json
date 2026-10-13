@@ -99,5 +99,56 @@
       }
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "7650c3404f49989bc335",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Operaciones+Inmobiliarias"
+              }
+            },
+            "Property": "Ciudad"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "c1b9c1895e4eee901572",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Operaciones+Inmobiliarias"
+              }
+            },
+            "Property": "Propiedad"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "40b1d319804860d34e5d",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Operaciones+Inmobiliarias"
+                  }
+                },
+                "Property": "Ciudad"
+              }
+            },
+            "Function": 5
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

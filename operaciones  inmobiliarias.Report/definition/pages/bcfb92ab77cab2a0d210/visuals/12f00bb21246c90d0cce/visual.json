@@ -1,0 +1,122 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "12f00bb21246c90d0cce",
+  "position": {
+    "x": 1357,
+    "y": 639,
+    "z": 3001,
+    "height": 441,
+    "width": 563,
+    "tabOrder": 3001
+  },
+  "visual": {
+    "visualType": "lineChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Operaciones+Inmobiliarias"
+                    }
+                  },
+                  "Property": "Ciudad"
+                }
+              },
+              "queryRef": "Operaciones+Inmobiliarias.Ciudad",
+              "nativeQueryRef": "Ciudad",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Operaciones+Inmobiliarias"
+                        }
+                      },
+                      "Property": "Precio (USD)"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Operaciones+Inmobiliarias.Precio (USD))",
+              "nativeQueryRef": "Suma de Precio (USD)"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "Operaciones+Inmobiliarias"
+                      }
+                    },
+                    "Property": "Precio (USD)"
+                  }
+                },
+                "Function": 0
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "19bc66f46e9abe2c5158",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Operaciones+Inmobiliarias"
+                  }
+                },
+                "Property": "Precio (USD)"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "6f972c6317f3e9af1160",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Operaciones+Inmobiliarias"
+              }
+            },
+            "Property": "Ciudad"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}
