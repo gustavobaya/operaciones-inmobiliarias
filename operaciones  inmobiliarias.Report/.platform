@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "operaciones  inmobiliarias"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "3421ac52-c5d4-462c-b45c-f30eef4fca57"
+  }
+}

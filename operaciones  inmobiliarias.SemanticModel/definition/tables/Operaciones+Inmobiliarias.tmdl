@@ -1,0 +1,64 @@
+table Operaciones+Inmobiliarias
+	lineageTag: eac11b81-ab17-48d6-9294-b2dddb575e07
+
+	column Fecha
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 0abff079-0321-4903-a1ea-1c8325d64ff2
+		summarizeBy: none
+		sourceColumn: Fecha
+
+		variation Variación
+			isDefault
+			relationship: 823792e2-662e-4694-87c6-ed2e733fcf16
+			defaultHierarchy: LocalDateTable_d40c4f83-dfcd-4151-8625-1d062af1143c.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Operación
+		dataType: string
+		lineageTag: 26075cbb-8d27-41b8-91cf-e94867828130
+		summarizeBy: none
+		sourceColumn: Operación
+
+		annotation SummarizationSetBy = Automatic
+
+	column Propiedad
+		dataType: string
+		lineageTag: 13185c0f-9ace-4b2a-88f2-67ec437c9bf0
+		summarizeBy: none
+		sourceColumn: Propiedad
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ciudad
+		dataType: string
+		lineageTag: 04a3313d-a756-4c23-9d55-5102d8a3b5c9
+		summarizeBy: none
+		sourceColumn: Ciudad
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Precio (USD)'
+		dataType: int64
+		formatString: 0
+		lineageTag: 50b6425e-2dd4-4796-8f58-0411c8a03682
+		summarizeBy: sum
+		sourceColumn: Precio (USD)
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Operaciones+Inmobiliarias = m
+		mode: import
+		source =
+				let
+				    Origen = Csv.Document(File.Contents("C:\Users\User\Desktop\Operaciones+Inmobiliarias.csv"),[Delimiter=",", Columns=5, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"Fecha", type date}, {"Operación", type text}, {"Propiedad", type text}, {"Ciudad", type text}, {"Precio (USD)", Int64.Type}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_ResultType = Table
+

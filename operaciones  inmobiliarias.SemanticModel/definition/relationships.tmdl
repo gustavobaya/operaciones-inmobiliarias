@@ -1,0 +1,5 @@
+relationship 823792e2-662e-4694-87c6-ed2e733fcf16
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Operaciones+Inmobiliarias.Fecha
+	toColumn: LocalDateTable_d40c4f83-dfcd-4151-8625-1d062af1143c.Date
+

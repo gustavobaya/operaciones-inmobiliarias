@@ -1,0 +1,39 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "ba973e4c20b0b4706950",
+  "position": {
+    "x": 10.212765957446809,
+    "y": 639.02735562310033,
+    "z": 1000,
+    "height": 430.3951367781155,
+    "width": 646.322188449848,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "map",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Operaciones+Inmobiliarias"
+                    }
+                  },
+                  "Property": "Ciudad"
+                }
+              },
+              "queryRef": "Operaciones+Inmobiliarias.Ciudad",
+              "nativeQueryRef": "Ciudad",
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

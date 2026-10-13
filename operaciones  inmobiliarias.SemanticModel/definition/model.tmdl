@@ -1,0 +1,21 @@
+model Model
+	culture: es-AR
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: es-ES
+	valueFilterBehavior: independent
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["Operaciones+Inmobiliarias"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table Operaciones+Inmobiliarias
+ref table DateTableTemplate_775bf2eb-ce0b-4402-a038-e437aacd18c8
+ref table LocalDateTable_d40c4f83-dfcd-4151-8625-1d062af1143c
+
+ref cultureInfo es-AR
+

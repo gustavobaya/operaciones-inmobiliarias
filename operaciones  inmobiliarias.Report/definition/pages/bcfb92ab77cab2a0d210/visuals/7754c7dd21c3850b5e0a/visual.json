@@ -1,0 +1,103 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "7754c7dd21c3850b5e0a",
+  "position": {
+    "x": 675.50151975683889,
+    "y": 639.02735562310033,
+    "z": 3000,
+    "height": 440.60790273556228,
+    "width": 681.33738601823711,
+    "tabOrder": 3000
+  },
+  "visual": {
+    "visualType": "barChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Operaciones+Inmobiliarias"
+                    }
+                  },
+                  "Property": "Ciudad"
+                }
+              },
+              "queryRef": "Operaciones+Inmobiliarias.Ciudad",
+              "nativeQueryRef": "Ciudad",
+              "active": true
+            }
+          ]
+        },
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Operaciones+Inmobiliarias"
+                    }
+                  },
+                  "Property": "Propiedad"
+                }
+              },
+              "queryRef": "Operaciones+Inmobiliarias.Propiedad",
+              "nativeQueryRef": "Propiedad"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Operaciones+Inmobiliarias"
+                        }
+                      },
+                      "Property": "Ciudad"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "CountNonNull(Operaciones+Inmobiliarias.Ciudad)",
+              "nativeQueryRef": "Recuento de Ciudad"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "Operaciones+Inmobiliarias"
+                      }
+                    },
+                    "Property": "Ciudad"
+                  }
+                },
+                "Function": 5
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
